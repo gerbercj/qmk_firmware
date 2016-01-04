@@ -25,18 +25,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID      0x6060
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    theGerb
-#define PRODUCT         atreus
+#define PRODUCT         Atreus
 #define DESCRIPTION     keyboard firmware for Atreus
 
 /* key matrix size */
 #define MATRIX_ROWS 4
 #define MATRIX_COLS 11
 
-// Planck PCB default pin-out
 // Change this to how you wired your keyboard
 // COLS: Left to right, ROWS: Top to bottom
-// #define COLS (int []){ F1, F0, B0, C7, F4, F5, F6, F7, D4, D6, B4, D7 }
-// #define ROWS (int []){ D0, D5, B5, B6 }
+// COLS: B7  D6  F7  F6  B6  D4  E6  B4  B5  C6  D7
+// ROWS: D0  D1  D3  D2
+#define COLS (int []){ B7, D6, F7, F6, B6, D4, E6, B4, B5, C6, D7 }
+#define ROWS (int []){ D0, D1, D3, D2 }
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -45,7 +46,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define MATRIX_HAS_GHOST
 
 /* number of backlight levels */
-// #define BACKLIGHT_LEVELS 3
+#define BACKLIGHT_LEVELS 3
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE    5
