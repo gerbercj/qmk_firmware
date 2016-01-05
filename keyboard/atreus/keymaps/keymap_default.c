@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {KC_INS,  KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_NO,   KC_UP,   KC_F7,   KC_F8,   KC_F9,   KC_F10 },
   {KC_DEL,  KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_NO,   KC_DOWN, KC_F6,   KC_F5,   KC_F6,   KC_F11 },
   {KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LALT, KC_TRNS, KC_F1,   KC_F2,   KC_F3,   KC_F12 },
-  {KC_TRNS, KC_TRNS, KC_LGUI, KC_LSFT, KC_BSPC, KC_LCTL, KC_SPC,  KC_TRNS, KC_TRNS, KC_TRNS, RESET  }
+  {KC_TRNS, KC_TRNS, KC_LGUI, KC_LSFT, KC_BSPC, KC_LCTL, KC_SPC,  KC_TRNS, KC_TRNS, KC_TRNS, KC_FN0 }
 },
 [_CM] = { /* Colemak */
   {KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,    KC_NO,   KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN},
@@ -46,8 +46,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 }
 };
 
-const uint16_t PROGMEM fn_actions[] = {
+enum function_id {
+  BOOTLOADER,
+};
 
+void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
+{
+  switch (id) {
+    case BOOTLOADER:
+      bootloader();
+      break;
+  }
+};
+
+const uint16_t PROGMEM fn_actions[] = {
+  [0] = ACTION_FUNCTION(BOOTLOADER)
 };
 
 const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
