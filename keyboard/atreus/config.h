@@ -24,9 +24,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define VENDOR_ID       0xFEED
 #define PRODUCT_ID      0x6060
 #define DEVICE_VER      0x0001
-#define MANUFACTURER    theGerb
+#define MANUFACTURER    Technomancy
 #define PRODUCT         Atreus
-#define DESCRIPTION     keyboard firmware for Atreus
+#define DESCRIPTION     q.m.k. keyboard firmware for Atreus
 
 /* key matrix size */
 #define MATRIX_ROWS 4
@@ -34,8 +34,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Change this to how you wired your keyboard
 // COLS: Left to right, ROWS: Top to bottom
-// COLS: B7  D6  F7  F6  B6  D4  E6  B4  B5  C6  D7
-// ROWS: D0  D1  D3  D2
 #define COLS (int []){ B7, D6, F7, F6, B6, D4, E6, B4, B5, C6, D7 }
 #define ROWS (int []){ D0, D1, D3, D2 }
 
